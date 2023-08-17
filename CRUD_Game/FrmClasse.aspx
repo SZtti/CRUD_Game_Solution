@@ -13,6 +13,23 @@
         <div>
             <a href="Default.aspx">Inicio</a>
         </div>
+
+        <fieldset>
+            <legend>
+                Criar nova Classe
+            </legend>
+            <p>
+                <label>Nome da Classe:</label>
+                <asp:TextBox runat="server" id="txtDescrição"/>
+            </p>
+            <p> 
+                <asp:Button Text="Cadastrar" runat="server" id="btnConfirmar" OnClick="btnConfirmar_Click"/>
+            </p>
+            <p>
+                <label id="lblMensagem"></label>
+            </p>
+        </fieldset>
+
     </form>
 </body>
 </html>

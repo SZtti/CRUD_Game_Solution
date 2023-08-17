@@ -13,5 +13,15 @@ namespace CRUD_Game
         {
 
         }
+
+        protected void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
