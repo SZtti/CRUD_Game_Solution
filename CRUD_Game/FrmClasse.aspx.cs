@@ -28,6 +28,9 @@ namespace CRUD_Game
 
                 string mensagem = ClasseDAO.CadastrarClasse(novaclasse);
 
+                //Limpando campo
+                txtDescrição.Text = "";
+
                 lblMensagem.InnerText = mensagem;
             }
         }
