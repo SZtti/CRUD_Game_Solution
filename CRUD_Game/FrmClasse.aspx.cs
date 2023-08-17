@@ -13,5 +13,22 @@ namespace CRUD_Game
         {
 
         }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string descricao = txtDescrição.Text;
+            if (descricao != "")
+            {
+                //Criando uma instância da classe
+                Classe novaclasse = new Classe();
+
+                //preencher o objeto
+                novaclasse.Descricao = descricao;
+
+                string mensagem = ClasseDAO.CadastrarClasse(novaclasse);
+
+                lblMensagem.InnerText = mensagem;
+            }
+        }
     }
 }

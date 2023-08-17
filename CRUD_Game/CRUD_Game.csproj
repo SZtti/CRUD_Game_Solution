@@ -97,6 +97,7 @@
     <Compile Include="Classe.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClasseDAO.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -26,7 +26,7 @@
                 <asp:Button Text="Cadastrar" runat="server" id="btnConfirmar" OnClick="btnConfirmar_Click"/>
             </p>
             <p>
-                <label id="lblMensagem"></label>
+                <label id="lblMensagem" runat="server"></label>
             </p>
         </fieldset>
 
