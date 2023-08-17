@@ -17,6 +17,7 @@ namespace CRUD_Game
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
             string descricao = txtDescrição.Text;
+
             if (descricao != "")
             {
                 //Criando uma instância da classe
