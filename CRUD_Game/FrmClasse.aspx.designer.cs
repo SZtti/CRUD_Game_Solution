@@ -11,7 +11,7 @@ namespace CRUD_Game
 {
 
 
-    public partial class Default
+    public partial class FrmClasse
     {
 
         /// <summary>
