@@ -16,7 +16,7 @@ namespace CRUD_Game
                     ctx.Classes.Add(novaclasse);
                     //Salvando as alterações mo BD
                     ctx.SaveChanges();
-                    mensagem = "Classse cadastrada com sucesso!";
+                    mensagem = "Classe cadastrada com sucesso!";
                 }
             }
             catch (Exception ex)
