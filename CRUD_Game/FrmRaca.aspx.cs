@@ -16,7 +16,7 @@ namespace CRUD_Game
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            string descricao = txtDescrição.Text;
+            var descricao = txtDescrição.Text;
 
             if (descricao != "")
             {
