@@ -124,6 +124,7 @@
     <Compile Include="Raca.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="RacaDAO.cs" />
     <Compile Include="RPG_Modelo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

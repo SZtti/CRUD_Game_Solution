@@ -16,7 +16,23 @@ namespace CRUD_Game
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
+            string descricao = txtDescrição.Text;
 
+            if (descricao != "")
+            {
+                //Criando uma instância da classe
+                Raca novaraca = new Raca();
+
+                //preencher o objeto
+                novaraca.Descricao = descricao;
+
+                string mensagem = RacaDAO.CadastrarRaca(novaraca);
+
+                //Limpando campo
+                txtDescrição.Text = "";
+
+                lblMensagem.InnerText = mensagem;
+            }
         }
     }
 }
