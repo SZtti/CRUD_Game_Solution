@@ -12,6 +12,13 @@
           <Property Name="IdClasse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="Habilidade">
+          <Key>
+            <PropertyRef Name="IdHabilidade" />
+          </Key>
+          <Property Name="IdHabilidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Raca">
           <Key>
             <PropertyRef Name="IdRaca" />
@@ -21,6 +28,7 @@
         </EntityType>
         <EntityContainer Name="RPG_BDModelStoreContainer">
           <EntitySet Name="Classe" EntityType="Self.Classe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Habilidade" EntityType="Self.Habilidade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Raca" EntityType="Self.Raca" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -37,6 +45,7 @@
         <EntityContainer Name="RPG_BDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Classes" EntityType="Self.Classe" />
           <EntitySet Name="Racas" EntityType="RPG_BDModel.Raca" />
+          <EntitySet Name="Habilidades" EntityType="RPG_BDModel.Habilidade" />
         </EntityContainer>
         <EntityType Name="Raca">
           <Key>
@@ -44,6 +53,13 @@
           </Key>
           <Property Name="IdRaca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descricao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Habilidade">
+          <Key>
+            <PropertyRef Name="IdHabilidade" />
+          </Key>
+          <Property Name="IdHabilidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -64,6 +80,14 @@
               <MappingFragment StoreEntitySet="Raca">
                 <ScalarProperty Name="Descricao" ColumnName="Descricao" />
                 <ScalarProperty Name="IdRaca" ColumnName="IdRaca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Habilidades">
+            <EntityTypeMapping TypeName="RPG_BDModel.Habilidade">
+              <MappingFragment StoreEntitySet="Habilidade">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="IdHabilidade" ColumnName="IdHabilidade" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -27,5 +27,6 @@ namespace CRUD_Game
     
         public virtual DbSet<Classe> Classes { get; set; }
         public virtual DbSet<Raca> Racas { get; set; }
+        public virtual DbSet<Habilidade> Habilidades { get; set; }
     }
 }

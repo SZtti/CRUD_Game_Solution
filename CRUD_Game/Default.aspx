@@ -13,6 +13,7 @@
         <div>
             <a href="FrmClasse.aspx">Gerenciar Classes</a>
             <a href="FrmRaca.aspx">Gerenciar Raças</a>
+            <a href="FrmHabilidade.aspx">Gerenciar Habilidades</a>
         </div>
     </form>
 </body>

@@ -1,0 +1,3 @@
+﻿Generated model file: RPG_Modelo.edmx.
+Loading metadata from the database took 00:00:00.4759868.
+Generating the model took 00:00:00.7980389.

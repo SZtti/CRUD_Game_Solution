@@ -2,9 +2,9 @@
 
 namespace CRUD_Game
 {
-    public class RacaDAO
+    internal class HabilidadeDAO
     {
-        public static string CadastrarRaca(Raca novaraca)
+        internal static string CadastrarHabilidade(Habilidade novahabilidade)
         {
             string mensagem = "";
             //tratamento de erros
@@ -13,11 +13,11 @@ namespace CRUD_Game
                 using (var ctx = new RPG_BDEntities())
                 {
                     //Cadastrando a nova classe
-                    ctx.Racas.Add(novaraca);
+                    ctx.Habilidades.Add(novahabilidade);
                     //Salvando as alterações mo BD
                     ctx.SaveChanges();
                 }
-                mensagem = "Raça " + novaraca.Descricao + " cadastrada com sucesso!";
+                mensagem = "Habilidade " + novahabilidade.Descricao + " cadastrada com sucesso!";
             }
             catch (Exception ex)
             {
