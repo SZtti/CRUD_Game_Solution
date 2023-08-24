@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 
 namespace CRUD_Game
 {
@@ -19,11 +20,29 @@ namespace CRUD_Game
                 }
                 mensagem = "Habilidade " + novahabilidade.Descricao + " cadastrada com sucesso!";
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2601 || ex.Number == 2627)
+                {
+                    mensagem = "A habilidade " + novahabilidade.Descricao + " já existe.";
+                }
+                else
+                {
+                    mensagem = "Ocorreu um erro: " + ex.Message;
+                }
+            }
             catch (Exception ex)
             {
-                mensagem = ex.Message;
+                if (ex.Message.Contains("An error occurred while updating the entries"))
+                {
+                    mensagem = "A habilidade " + novahabilidade.Descricao + " já existe.";
+                }
+                else
+                {
+                    mensagem = "Ocorreu um erro: " + ex.Message;
+                }
             }
-
+            
             return mensagem;
         }
     }
