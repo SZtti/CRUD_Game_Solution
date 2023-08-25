@@ -12,6 +12,7 @@
     <form id="form1" runat="server">
         <div>
             <a href="FrmClasse.aspx">Gerenciar Classes</a>
+            <a href="FrmSubClasse.aspx">Gerenciar SubClasses</a>
             <a href="FrmRaca.aspx">Gerenciar Raças</a>
             <a href="FrmHabilidade.aspx">Gerenciar Habilidades</a>
         </div>

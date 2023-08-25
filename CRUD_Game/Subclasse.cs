@@ -12,18 +12,12 @@ namespace CRUD_Game
     using System;
     using System.Collections.Generic;
     
-    public partial class Classe
+    public partial class Subclasse
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Classe()
-        {
-            this.Subclasses = new HashSet<Subclasse>();
-        }
-    
-        public int IdClasse { get; set; }
+        public int IdSubclasse { get; set; }
         public string Descricao { get; set; }
+        public int ClasseID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Subclasse> Subclasses { get; set; }
+        public virtual Classe Classe { get; set; }
     }
 }

@@ -26,10 +26,35 @@
           <Property Name="IdRaca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Subclasse">
+          <Key>
+            <PropertyRef Name="IdSubclasse" />
+          </Key>
+          <Property Name="IdSubclasse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClasseID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Subclasse_Classe">
+          <End Role="Classe" Type="Self.Classe" Multiplicity="1" />
+          <End Role="Subclasse" Type="Self.Subclasse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classe">
+              <PropertyRef Name="IdClasse" />
+            </Principal>
+            <Dependent Role="Subclasse">
+              <PropertyRef Name="ClasseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="RPG_BDModelStoreContainer">
           <EntitySet Name="Classe" EntityType="Self.Classe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Habilidade" EntityType="Self.Habilidade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Raca" EntityType="Self.Raca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subclasse" EntityType="Self.Subclasse" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Subclasse_Classe" Association="Self.FK_Subclasse_Classe">
+            <End Role="Classe" EntitySet="Classe" />
+            <End Role="Subclasse" EntitySet="Subclasse" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -41,11 +66,17 @@
           </Key>
           <Property Name="IdClasse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Subclasses" Relationship="RPG_BDModel.FK_Subclasse_Classe" FromRole="Classe" ToRole="Subclasse" />
         </EntityType>
         <EntityContainer Name="RPG_BDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Classes" EntityType="Self.Classe" />
           <EntitySet Name="Racas" EntityType="RPG_BDModel.Raca" />
           <EntitySet Name="Habilidades" EntityType="RPG_BDModel.Habilidade" />
+          <EntitySet Name="Subclasses" EntityType="RPG_BDModel.Subclasse" />
+          <AssociationSet Name="FK_Subclasse_Classe" Association="RPG_BDModel.FK_Subclasse_Classe">
+            <End Role="Classe" EntitySet="Classes" />
+            <End Role="Subclasse" EntitySet="Subclasses" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Raca">
           <Key>
@@ -61,6 +92,27 @@
           <Property Name="IdHabilidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Subclasse">
+          <Key>
+            <PropertyRef Name="IdSubclasse" />
+          </Key>
+          <Property Name="IdSubclasse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClasseID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classe" Relationship="RPG_BDModel.FK_Subclasse_Classe" FromRole="Subclasse" ToRole="Classe" />
+        </EntityType>
+        <Association Name="FK_Subclasse_Classe">
+          <End Type="RPG_BDModel.Classe" Role="Classe" Multiplicity="1" />
+          <End Type="RPG_BDModel.Subclasse" Role="Subclasse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classe">
+              <PropertyRef Name="IdClasse" />
+            </Principal>
+            <Dependent Role="Subclasse">
+              <PropertyRef Name="ClasseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -88,6 +140,15 @@
               <MappingFragment StoreEntitySet="Habilidade">
                 <ScalarProperty Name="Descricao" ColumnName="Descricao" />
                 <ScalarProperty Name="IdHabilidade" ColumnName="IdHabilidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subclasses">
+            <EntityTypeMapping TypeName="RPG_BDModel.Subclasse">
+              <MappingFragment StoreEntitySet="Subclasse">
+                <ScalarProperty Name="ClasseID" ColumnName="ClasseID" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="IdSubclasse" ColumnName="IdSubclasse" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

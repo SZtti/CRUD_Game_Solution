@@ -83,6 +83,7 @@
     <Content Include="FrmClasse.aspx" />
     <Content Include="FrmHabilidade.aspx" />
     <Content Include="FrmRaca.aspx" />
+    <Content Include="FrmSubClasse.aspx" />
     <Content Include="RPG_Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RPG_Modelo.Context.cs</LastGenOutput>
@@ -128,6 +129,13 @@
     <Compile Include="FrmRaca.aspx.designer.cs">
       <DependentUpon>FrmRaca.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrmSubClasse.aspx.cs">
+      <DependentUpon>FrmSubClasse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmSubClasse.aspx.designer.cs">
+      <DependentUpon>FrmSubClasse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Habilidade.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
@@ -151,6 +159,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPG_Modelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Subclasse.cs">
+      <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

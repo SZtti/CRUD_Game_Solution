@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CRUD_Game
 {
@@ -25,6 +27,24 @@ namespace CRUD_Game
             }
 
             return mensagem;
+        }
+
+        internal static List<Classe> ListarClasses()
+        {
+            List<Classe> classes = null;
+            try
+            {
+                using (var ctx = new RPG_BDEntities())
+                {
+                    classes = ctx.Classes.OrderBy(x => x.Descricao).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+            return classes;
         }
     }
 }
