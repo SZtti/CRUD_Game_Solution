@@ -163,6 +163,7 @@
     <Compile Include="Subclasse.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="SubClasseDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -26,6 +26,40 @@ namespace CRUD_Game
             DDLClasse.DataValueField = "IdClasse";
             DDLClasse.DataBind();
             DDLClasse.Items.Insert(0, "Selecione...");
+            
+        }
+
+     
+        protected void btnConfirmar_Click1(object sender, EventArgs e)
+        {
+            var descricao = txtDescrição.Text;
+
+            int index = DDLClasse.SelectedIndex;
+
+            if(index == 0)
+            {
+                lblMensagem.InnerText = "Você precisa selecionar uma classe!";
+            }
+
+            else if (descricao != "")
+            {
+                //Criando uma instância da classe
+                Subclasse novasubclasse = new Subclasse();
+
+                //capturando o id da classe dessa subclasse
+                int idClasse = Convert.ToInt32(DDLClasse.SelectedValue);
+                novasubclasse.ClasseID = idClasse;
+
+                //preencher o objeto
+                novasubclasse.Descricao = descricao;
+
+                string mensagem = SubClasseDAO.CadastrarSubClasse(novasubclasse);
+
+                //Limpando campo
+                txtDescrição.Text = "";
+
+                lblMensagem.InnerText = mensagem;
+            }
         }
     }
 }

@@ -41,7 +41,6 @@ namespace CRUD_Game
             }
             catch (Exception ex)
             {
-
                 
             }
             return classes;
