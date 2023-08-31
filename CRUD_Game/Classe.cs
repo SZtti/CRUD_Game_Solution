@@ -18,6 +18,7 @@ namespace CRUD_Game
         public Classe()
         {
             this.Subclasses = new HashSet<Subclasse>();
+            this.Personagems = new HashSet<Personagem>();
         }
     
         public int IdClasse { get; set; }
@@ -25,5 +26,7 @@ namespace CRUD_Game
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Subclasse> Subclasses { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Personagem> Personagems { get; set; }
     }
 }

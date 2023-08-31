@@ -12,16 +12,21 @@ namespace CRUD_Game
     using System;
     using System.Collections.Generic;
     
-    public partial class Raca
+    public partial class Aparencia
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Raca()
+        public Aparencia()
         {
             this.Personagems = new HashSet<Personagem>();
         }
     
-        public int IdRaca { get; set; }
-        public string Descricao { get; set; }
+        public int IdAparencia { get; set; }
+        public decimal Peso { get; set; }
+        public decimal Altura { get; set; }
+        public string Cor_Cabelo { get; set; }
+        public string Estilo_Cabelo { get; set; }
+        public string Cor_Olho { get; set; }
+        public string Cor_Pele { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personagem> Personagems { get; set; }

@@ -12,20 +12,31 @@ namespace CRUD_Game
     using System;
     using System.Collections.Generic;
     
-    public partial class Subclasse
+    public partial class Personagem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subclasse()
+        public Personagem()
         {
-            this.Personagems = new HashSet<Personagem>();
+            this.Habilidades = new HashSet<Habilidade>();
         }
     
-        public int IdSubclasse { get; set; }
-        public string Descricao { get; set; }
+        public int IdPersonagem { get; set; }
+        public Nullable<System.DateTime> Data_Nasc { get; set; }
+        public int Nivel { get; set; }
+        public string Nome_Personagem { get; set; }
+        public string Sexo { get; set; }
+        public int AparenciaID { get; set; }
+        public int AtributoID { get; set; }
+        public int RacaID { get; set; }
+        public int SubClasseID { get; set; }
         public int ClasseID { get; set; }
     
+        public virtual Aparencia Aparencia { get; set; }
+        public virtual Atributo Atributo { get; set; }
         public virtual Classe Classe { get; set; }
+        public virtual Raca Raca { get; set; }
+        public virtual Subclasse Subclasse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personagem> Personagems { get; set; }
+        public virtual ICollection<Habilidade> Habilidades { get; set; }
     }
 }

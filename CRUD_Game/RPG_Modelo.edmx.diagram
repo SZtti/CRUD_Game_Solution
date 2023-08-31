@@ -5,11 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="064e95811bd34dbf9c4d9dee6d159c00" Name="Diagram1">
-        <EntityTypeShape EntityType="RPG_BDModel.Classe" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RPG_BDModel.Raca" Width="1.5" PointX="2.875" PointY="0.75" />
-        <EntityTypeShape EntityType="RPG_BDModel.Habilidade" Width="1.5" PointX="5" PointY="0.75" />
-        <EntityTypeShape EntityType="RPG_BDModel.Subclasse" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="RPG_BDModel.Classe" Width="1.5" PointX="5.375" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RPG_BDModel.Raca" Width="1.5" PointX="3.75" PointY="1.875" />
+        <EntityTypeShape EntityType="RPG_BDModel.Habilidade" Width="1.5" PointX="6.75" PointY="0.625" />
+        <EntityTypeShape EntityType="RPG_BDModel.Subclasse" Width="1.5" PointX="9.25" PointY="5.5" />
         <AssociationConnector Association="RPG_BDModel.FK_Subclasse_Classe" />
+        <EntityTypeShape EntityType="RPG_BDModel.Aparencia" Width="1.5" PointX="11.625" PointY="4.125" />
+        <EntityTypeShape EntityType="RPG_BDModel.Atributo" Width="1.5" PointX="11.625" PointY="1" />
+        <EntityTypeShape EntityType="RPG_BDModel.Personagem" Width="1.5" PointX="9.25" PointY="0.875" />
+        <AssociationConnector Association="RPG_BDModel.FK_Personagem_Aparencia" />
+        <AssociationConnector Association="RPG_BDModel.FK_Personagem_Atributos" />
+        <AssociationConnector Association="RPG_BDModel.FK_Personagem_Classe" />
+        <AssociationConnector Association="RPG_BDModel.FK_Personagem_Raca" />
+        <AssociationConnector Association="RPG_BDModel.FK_Personagem_SubClasse" />
+        <AssociationConnector Association="RPG_BDModel.Personagem_Habilidade" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

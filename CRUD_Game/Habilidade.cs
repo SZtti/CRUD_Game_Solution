@@ -14,7 +14,16 @@ namespace CRUD_Game
     
     public partial class Habilidade
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Habilidade()
+        {
+            this.Personagems = new HashSet<Personagem>();
+        }
+    
         public int IdHabilidade { get; set; }
         public string Descricao { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Personagem> Personagems { get; set; }
     }
 }
