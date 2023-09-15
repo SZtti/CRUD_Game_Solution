@@ -30,13 +30,26 @@
             </p>
         </fieldset>
 
-        <h2>Classes cadastradas</h2>
-        <asp:ListView runat="server" ID="lvClasses">
-            <ItemTemplate>
-                <%# Eval("Descricao") %> 
-                <br />
-            </ItemTemplate>
-        </asp:ListView>
+         <h2>Classes cadastradas</h2>
+        <table>
+            <tr>
+                <td>Código</td>
+                <td>Descrição</td>         
+            </tr>
+        
+                <asp:ListView runat="server" ID="lvClasses">
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <%# Eval("IdClasse") %>
+                            </td>
+                            <td> 
+                           <%# Eval("Descricao") %> 
+                            </td>
+                       </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+        </table>
 
     </form>
 </body>
