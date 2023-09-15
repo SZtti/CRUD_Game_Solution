@@ -23,7 +23,7 @@ namespace CRUD_Game
                 List<Aparencia> aparencias = AparenciaDAO.ListarAparencia();
                 List<Atributo> atributos = AtributoDAO.ListarAtributo();
 
-                PopularDDlRaca(racas);
+              
             }
             catch (Exception)
             {

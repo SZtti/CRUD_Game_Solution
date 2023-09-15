@@ -11,7 +11,22 @@ namespace CRUD_Game
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                PopularLVs();
+            }
+        }
 
+        private void PopularLVs()
+        {
+            var classes = ClasseDAO.ListarClasses();
+            PopularLVClasses(classes);
+        }
+
+        private void PopularLVClasses(List<Classe> classes)
+        {
+            lvClasses.DataSource = classes;
+            lvClasses.DataBind();
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
@@ -32,6 +47,8 @@ namespace CRUD_Game
                 txtDescrição.Text = "";
 
                 lblMensagem.InnerText = mensagem;
+
+                PopularLVs();
             }
         }
     }
