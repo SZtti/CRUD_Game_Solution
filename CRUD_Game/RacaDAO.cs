@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CRUD_Game
 {
@@ -25,6 +26,11 @@ namespace CRUD_Game
             }
 
             return mensagem;
+        }
+
+        internal static List<Raca> ListarRacas()
+        {
+            throw new NotImplementedException();
         }
     }
 }

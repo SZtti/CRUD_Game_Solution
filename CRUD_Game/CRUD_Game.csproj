@@ -82,6 +82,7 @@
     <Content Include="Default.aspx" />
     <Content Include="FrmClasse.aspx" />
     <Content Include="FrmHabilidade.aspx" />
+    <Content Include="FrmPersonagem.aspx" />
     <Content Include="FrmRaca.aspx" />
     <Content Include="FrmSubClasse.aspx" />
     <Content Include="RPG_Modelo.Context.tt">
@@ -100,9 +101,11 @@
     <Compile Include="Aparencia.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="AparenciaDAO.cs" />
     <Compile Include="Atributo.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="AtributoDAO.cs" />
     <Compile Include="Classe.cs">
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
@@ -127,6 +130,13 @@
     </Compile>
     <Compile Include="FrmHabilidade.aspx.designer.cs">
       <DependentUpon>FrmHabilidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPersonagem.aspx.cs">
+      <DependentUpon>FrmPersonagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPersonagem.aspx.designer.cs">
+      <DependentUpon>FrmPersonagem.aspx</DependentUpon>
     </Compile>
     <Compile Include="FrmRaca.aspx.cs">
       <DependentUpon>FrmRaca.aspx</DependentUpon>
