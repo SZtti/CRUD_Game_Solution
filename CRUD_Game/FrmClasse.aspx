@@ -34,7 +34,8 @@
         <table border="1">
             <tr>
                 <td>Código</td>
-                <td>Descrição</td>         
+                <td>Descrição</td>   
+                <th>Ações</th>
             </tr>
         
                 <asp:ListView runat="server" ID="lvClasses">
@@ -45,6 +46,9 @@
                             </td>
                             <td> 
                            <%# Eval("Descricao") %> 
+                            </td>
+                            <td>
+                                <img "img/delete.png"/>
                             </td>
                        </tr>
                     </ItemTemplate>
