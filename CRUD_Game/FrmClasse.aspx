@@ -30,6 +30,14 @@
             </p>
         </fieldset>
 
+        <h2>Classes cadastradas</h2>
+        <asp:ListView runat="server" ID="lvClasses">
+            <ItemTemplate>
+                <%# Eval("Descricao") %> 
+                <br />
+            </ItemTemplate>
+        </asp:ListView>
+
     </form>
 </body>
 </html>
