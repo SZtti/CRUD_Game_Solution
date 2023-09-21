@@ -49,13 +49,13 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <%# Eval("IdSubclasse") %>
+                               <%# Eval("IdSubclasse") %>
                             </td>
                             <td> 
                            <%# Eval("Descricao") %> 
                             </td>
                             <td> 
-                           <%# Eval("GetClasse") %> 
+                           <%# Eval("GetClasse.Descricao") %> 
                             </td>
                              <td>
                                <asp:ImageButton ID="btnView" runat="server" ImageUrl="img/view.svg"/>
