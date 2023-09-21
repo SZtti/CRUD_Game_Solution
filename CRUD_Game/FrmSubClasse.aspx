@@ -45,7 +45,7 @@
                 
             </tr>
         
-                <asp:ListView runat="server" ID="lvSubClasses">
+                <asp:ListView runat="server" ID="lvSubClasses" OnItemCommand="lvSubClasses_ItemCommand">
                     <ItemTemplate>
                         <tr>
                             <td>
@@ -64,9 +64,8 @@
                                <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="img/edit.svg"/>
                             </td>
                             <td>
-                                <asp:ImageButton ID="btnDelete" runat="server" ImageUrl="img/delete.svg"/>
+                                <asp:ImageButton ID="btnDelete" runat="server" ImageUrl="img/delete.svg" CommandName="Excluir" CommandArgument='<%# Eval("IdSubclasse") %>'/>
                             </td>
-                             
                        </tr>
                     </ItemTemplate>
                 </asp:ListView>

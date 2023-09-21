@@ -68,6 +68,25 @@ namespace CRUD_Game
                 txtDescrição.Text = "";
 
                 lblMensagem.InnerText = mensagem;
+                PopularLVs();
+            }
+        }
+        
+
+        protected void lvSubClasses_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if(e.CommandName == "Excluir"){
+                var id = e.CommandArgument;
+                if(id != null)
+                {
+                    int idSubclasse = Convert.ToInt32(id);
+                    Subclasse subExcluida = SubClasseDAO.Remover(idSubclasse);
+                    if(subExcluida != null)
+                    {
+                        lblMensagem.InnerText = "Subclasse " + subExcluida.Descricao + " excluida com sucesso!";
+                        PopularLVs();
+                    }
+                }
             }
         }
     }

@@ -46,5 +46,18 @@ namespace CRUD_Game
             }
             return Subclasses;
         }
+
+        internal static Subclasse Remover(int idSubclasse)
+        {
+            Subclasse sub = null;
+
+            using(var ctx = new RPG_BDEntities())
+            {
+                sub = ctx.Subclasses.FirstOrDefault(x => x.IdSubclasse == idSubclasse);
+                ctx.Subclasses.Remove(sub);
+                ctx.SaveChanges();
+            }
+            return sub;
+        }
     }
     }
