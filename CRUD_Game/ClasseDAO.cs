@@ -33,6 +33,13 @@ namespace CRUD_Game
         {
             Classe classe = null;
 
+            using (var ctx = new RPG_BDEntities())
+            {
+                classe = ctx.Classes.FirstOrDefault(
+                    x => x.IdClasse == classeID
+                    ) ;
+            }
+
             return classe;
         }
 

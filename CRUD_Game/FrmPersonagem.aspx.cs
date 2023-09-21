@@ -20,7 +20,7 @@ namespace CRUD_Game
             {
                 List<Raca> racas = RacaDAO.ListarRacas();
                 List<Subclasse> subclasses = SubClasseDAO.ListarSubClasse();
-                List<Aparencia> aparencias = AparenciaDAO.ListarAparencia();
+                List<Aparencia> aparencias = AparenciaDAO.ListarAparencias();
                 List<Atributo> atributos = AtributoDAO.ListarAtributo();
 
               

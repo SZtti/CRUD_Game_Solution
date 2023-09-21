@@ -7,10 +7,23 @@ namespace CRUD_Game
 {
     public partial class Subclasse
     {
-        public Classe GetClasse()
+        //public Classe GetClasse()
+        //{
+        //    Classe classe = ClasseDAO.ListarClasses(ClasseID);
+        //    return null;
+        //}
+
+        private Classe getClasse;
+
+        public Classe GetClasse
         {
-            Classe classe = ClasseDAO.ListarClasses(ClasseID);
-            return null;
+            get 
+            {
+                getClasse = ClasseDAO.ListarClasses(ClasseID); 
+                return getClasse; 
+            }
+            
         }
+
     }
 }

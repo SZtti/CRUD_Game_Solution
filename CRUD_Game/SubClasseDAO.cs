@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CRUD_Game
 {
@@ -31,7 +32,19 @@ namespace CRUD_Game
 
         internal static List<Subclasse> ListarSubClasse()
         {
-            throw new NotImplementedException();
+            List<Subclasse> Subclasses = null;
+            try
+            {
+                using (var ctx = new RPG_BDEntities())
+                {
+                    Subclasses = ctx.Subclasses.OrderBy(x => x.Descricao).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Subclasses;
         }
     }
-}
+    }

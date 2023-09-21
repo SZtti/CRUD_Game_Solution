@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gerenciar SubClasse</title>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,6 +32,45 @@
                 <label id="lblMensagem" runat="server"></label>
             </p>
         </fieldset>
+
+        <h2>SubClasses cadastradas</h2>
+        <table border="1" class="tabela">
+            <tr>
+                <td>Código</td>
+                <td>Descrição</td>
+                <td>Classe</td>
+                <th>Visualizar</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+                
+            </tr>
+        
+                <asp:ListView runat="server" ID="lvSubClasses">
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <%# Eval("IdSubclasse") %>
+                            </td>
+                            <td> 
+                           <%# Eval("Descricao") %> 
+                            </td>
+                            <td> 
+                           <%# Eval("GetClasse") %> 
+                            </td>
+                             <td>
+                               <asp:ImageButton ID="btnView" runat="server" ImageUrl="img/view.svg"/>
+                            </td>
+                            <td>
+                               <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="img/edit.svg"/>
+                            </td>
+                            <td>
+                                <asp:ImageButton ID="btnDelete" runat="server" ImageUrl="img/delete.svg"/>
+                            </td>
+                             
+                       </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+        </table>
         </div>
     </form>
 </body>

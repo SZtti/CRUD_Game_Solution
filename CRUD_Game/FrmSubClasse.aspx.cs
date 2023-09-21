@@ -15,8 +15,17 @@ namespace CRUD_Game
             {
                 List<Classe> classes = ClasseDAO.ListarClasses();
                 PreencherDDLClasse(classes);
+                PopularLVs();
             }
+
             
+        }
+
+        private void PopularLVs()
+        {
+            var subclasses = SubClasseDAO.ListarSubClasse();
+            lvSubClasses.DataSource = subclasses;
+            lvSubClasses.DataBind();
         }
 
         private void PreencherDDLClasse(List<Classe> classes)
