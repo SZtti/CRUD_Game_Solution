@@ -79,6 +79,7 @@
     <Content Include="App_Data\RPG_BD_log.ldf">
       <DependentUpon>RPG_BD.mdf</DependentUpon>
     </Content>
+    <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="FrmClasse.aspx" />
     <Content Include="FrmHabilidade.aspx" />
@@ -186,6 +187,7 @@
       <DependentUpon>RPG_Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="SubClasseDAO.cs" />
+    <Compile Include="SubclassePOCO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

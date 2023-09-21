@@ -29,6 +29,13 @@ namespace CRUD_Game
             return mensagem;
         }
 
+        internal static Classe ListarClasses(int classeID)
+        {
+            Classe classe = null;
+
+            return classe;
+        }
+
         internal static List<Classe> ListarClasses()
         {
             List<Classe> classes = null;

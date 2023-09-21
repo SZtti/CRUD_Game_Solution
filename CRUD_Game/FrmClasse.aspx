@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Gerenciar Classes</h1>
+    <link href="css/style.css" rel="stylesheet" />
     <form id="form1" runat="server">
         <div>
             <a href="Default.aspx">Inicio</a>
@@ -31,7 +32,7 @@
         </fieldset>
 
          <h2>Classes cadastradas</h2>
-        <table border="1">
+        <table border="1" class="tabela">
             <tr>
                 <td>Código</td>
                 <td>Descrição</td>
