@@ -34,8 +34,11 @@
         <table border="1">
             <tr>
                 <td>Código</td>
-                <td>Descrição</td>   
-                <th>Ações</th>
+                <td>Descrição</td>
+                <th>Visualizar</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+                
             </tr>
         
                 <asp:ListView runat="server" ID="lvClasses">
@@ -47,9 +50,16 @@
                             <td> 
                            <%# Eval("Descricao") %> 
                             </td>
-                            <td>
-                                <img "img/delete.png"/>
+                             <td>
+                               <asp:ImageButton ID="btnView" runat="server" ImageUrl="img/view.svg"/>
                             </td>
+                            <td>
+                               <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="img/edit.svg"/>
+                            </td>
+                            <td>
+                                <asp:ImageButton ID="btnDelete" runat="server" ImageUrl="img/delete.svg"/>
+                            </td>
+                             
                        </tr>
                     </ItemTemplate>
                 </asp:ListView>

@@ -85,7 +85,9 @@
     <Content Include="FrmPersonagem.aspx" />
     <Content Include="FrmRaca.aspx" />
     <Content Include="FrmSubClasse.aspx" />
-    <Content Include="img\delete.png" />
+    <Content Include="img\delete.svg" />
+    <Content Include="img\edit.svg" />
+    <Content Include="img\view.svg" />
     <Content Include="RPG_Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RPG_Modelo.Context.cs</LastGenOutput>
